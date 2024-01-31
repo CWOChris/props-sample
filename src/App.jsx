@@ -27,10 +27,18 @@ function App() {
 
   const [carsPurchased, setCarsPurchased] = useState(0);
 
+  // // added during class
+  // useEffect(() => {
+  //   document.title = `Cars Purchased: ${carsPurchased}`
+  // }, [carsPurchased, firstName, lastName])
+  // // end added during class
+
   // added during class
+  // this could be used to run API calls during page loads or access a database that may take a while,
+  // it is done this way so that the page will load without waiting for the API call to finish.
   useEffect(() => {
-    document.title = `Cars Purchased: ${carsPurchased}`
-  }, [carsPurchased, firstName, lastName])
+    document.title = `Bob's Cars`
+  }, [])
   // end added during class
 
   const increasePurchase = () => {
