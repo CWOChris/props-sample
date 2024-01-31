@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import CarHeader from './components/CarHeader'
 import Cars from './components/Cars'
 import Form from './components/Form'
+import CarsPurchased from './components/CarsPurchased'
 import './App.css'
 
 const cars = [{
@@ -50,9 +51,14 @@ function App() {
     <>
     <CarHeader name="Bob's" location="Minneapolis"/>
     <Cars carsArray={cars} increasePurchase={increasePurchase} />
-    {carsPurchased > 0 && ( 
-      <div>Cars Purchased: {carsPurchased}</div>
-    )}
+    {carsPurchased > 0 ? ( 
+      <CarsPurchased carsPurchased={carsPurchased} />
+    )
+    :
+    (
+      <div>No Cars Purchased</div>
+    )
+    }
     <Form/>
     </>
   )
