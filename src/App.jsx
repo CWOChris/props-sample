@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import CarHeader from './components/CarHeader'
 import Cars from './components/Cars'
 import Form from './components/Form'
@@ -26,6 +26,12 @@ const cars = [{
 function App() {
 
   const [carsPurchased, setCarsPurchased] = useState(0);
+
+  // added during class
+  useEffect(() => {
+    document.title = `Cars Purchased: ${carsPurchased}`
+  }, [carsPurchased, firstName, lastName])
+  // end added during class
 
   const increasePurchase = () => {
     console.log("increasePurchase")
